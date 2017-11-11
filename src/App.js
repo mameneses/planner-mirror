@@ -5,6 +5,18 @@ import request from 'request'
 import {fromJS,List,Map} from 'immutable'
 import * as dd from './dummy_data.js'
 
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split('&');
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split('=');
+        if (decodeURIComponent(pair[0]) == variable) {
+            return decodeURIComponent(pair[1]);
+        }
+    }
+    console.log('Query variable %s not found', variable);
+}
+
 class App extends Component {
   constructor(props){
     super(props)
@@ -27,7 +39,7 @@ class App extends Component {
     }, 2000000);
     this.getCurrentWeather()
     this.getThreeDayWeather()
-    let timeToBart = parseInt(window.location.pathname.split("/")[1])
+    let timeToBart = parseInt(getQueryVariable("mins"))
     if(timeToBart && !isNaN(timeToBart)){
       this.setState({
         timeToBart: parseInt(timeToBart)
