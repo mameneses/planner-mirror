@@ -1,0 +1,88 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.clock{
+  font-size: 8rem;
+}
+.date{
+  font-size: 4rem;
+  line-height: 12rem;
+  vertical-align: middle;
+}
+.bart-times{
+  margin-top: 40px;
+  font-size: 3.5rem;
+}
+.track{
+  width: 90%;
+  margin: 80px auto;
+  height: 3px;
+  background-color:white;
+  position: relative;
+  @media (max-width: 750px) {
+    display: none;
+  }
+}
+.car{
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background-color: red;
+  position: absolute;
+  top: -18px;
+}
+.station{
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  position: absolute;
+  top: -10px;
+}
+.station-name{
+  position: absolute;
+  top:20px;
+}
+.leave-display{
+  border-radius: 5px;
+}
+.destination{
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 750px) {
+  .track, .date{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .clock{
+    font-size: 5rem;
+  }
+  .leave-display{
+    font-size: 3rem;
+  }
+}
